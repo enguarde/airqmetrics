@@ -144,5 +144,6 @@ func main() {
 	promHandler = promhttp.HandlerFor(r, promhttp.HandlerOpts{})
 
 	http.HandleFunc("/metrics", MetricHandler)
-	log.Fatal(http.ListenAndServe(*listenFlag, nil))
+
+	log.Print(http.ListenAndServe(*listenFlag, nil))
 }
